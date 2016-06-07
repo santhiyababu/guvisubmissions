@@ -1,21 +1,26 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
- 
-int main() 
+
+ #include <stdio.h>
+
+/* Iterative function to reverse digits of num*/
+int reversDigits(int num)
 {
-   int num1, num2;
-   char str[10];
- 
-   printf("\nEnte the Number : ");
-   scanf("%d", &num1);
- 
-   sprintf(str, "%d", num1);
-   strrev(str);
-   num2 = atoi(str);
- 
-   printf("\nReversed Number : ");
-   printf("%d", num2);
- 
-   return (0);
+    int rev_num = 0;
+    while(num > 0)
+    {
+        rev_num = rev_num*10 + num%10;
+        num = num/10;
+    }
+    return rev_num;
+}
+
+/*Driver program to test reversDigits*/
+int main()
+{
+    int num = 4562;
+    printf("Reverse of no. is %d", reversDigits(num));
+
+    getchar();
+    return 0;
+}
+
 }
